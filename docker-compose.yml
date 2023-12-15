@@ -46,6 +46,18 @@ services:
       "
     depends_on:
       - minio
+
+  devcontainer:
+    build:
+      context: ./spark
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspace
+    command: sleep infinity
+    depends_on:
+      - postgres
+      - minio
+      - init-minio
 volumes:
   postgres_data:
   minio_data:
