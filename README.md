@@ -27,7 +27,7 @@ If the option isn't there, wait a bit until it shows up, as it may take some tim
 ### The Environment
 After executing everything above you should now have:
 * postgres instance with a database **bdt**, containing a **public** schema, accessible from vscode with **bdt**/**bdt** login/password under **postgres:5432** host/port
-* minIO instance containing a single bucket called **big-data-team**, accessible from vscode with an access/secret key **big-data-team**/**big-data-team** under minio:9000. To check out the ui, go to http://localhost:9001
+* minIO instance containing an empty bucket called **big-data-team**, accessible from vscode with an access/secret key **big-data-team**/**big-data-team** under **minio:9000**. To check out the ui, go to http://localhost:9001
 * Microsoft devcontainer for vscode, to which you've just connected. It already has all the Python and Java packages that you need to connect to postgres and minio, as well as **PySpark 3.3.3**. s3 endpoint, **access and secret key are already in Spark defaults**, so you **don't have to specify these** when creating a Spark session
 
 
