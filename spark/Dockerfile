@@ -1,4 +1,4 @@
-ARG MAVEN_IMAGE=registry.exness.io/big-data/infrastructure/service-images/maven:3.9.3-eclipse-temurin-17-focal
+ARG MAVEN_IMAGE=maven:3.9.3-eclipse-temurin-17-focal
 ARG spark_uid=185
 
 FROM ${MAVEN_IMAGE} AS  spark_libs
