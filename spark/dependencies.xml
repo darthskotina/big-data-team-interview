@@ -1,0 +1,71 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>env.domain.spark</groupId>
+  <artifactId>dependencies</artifactId>
+  <version>0.0.1</version>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spark.version>3.3.1</spark.version>
+    <hadoop.version>3.3.1</hadoop.version>
+    <slf4j.version>1.7.7</slf4j.version>
+    <log4j.version>1.2.17</log4j.version>
+    <jackson.version>2.12.3</jackson.version>
+    <scala.version>2.12</scala.version>
+    <aws-java-sdk-bundle.version>1.12.170</aws-java-sdk-bundle.version>
+    <jackson-bom.version>2.12.3</jackson-bom.version>
+</properties>
+  <dependencies>
+    <dependency>
+        <groupId>org.apache.hadoop</groupId>
+        <artifactId>hadoop-aws</artifactId>
+        <version>${hadoop.version}</version>
+        <exclusions>
+        <exclusion>
+            <groupId>*</groupId>
+            <artifactId>*</artifactId>
+        </exclusion>
+    </exclusions>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk -->
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk</artifactId>
+    <version>${aws-java-sdk-bundle.version}</version>
+</dependency>
+
+<dependency>
+    <groupId>org.apache.hadoop</groupId>
+    <artifactId>hadoop-common</artifactId>
+    <version>${hadoop.version}</version>
+    <exclusions>
+        <exclusion>
+            <groupId>*</groupId>
+            <artifactId>*</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+ <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>${hadoop.version}</version>
+            <exclusions>
+        <exclusion>
+            <groupId>*</groupId>
+            <artifactId>*</artifactId>
+        </exclusion>
+    </exclusions>
+        </dependency>
+    <!-- PostgreSQL (JDBC) -->
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.5.0</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+</project>

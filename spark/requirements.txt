@@ -1,3 +1,5 @@
-boto3
-psycopg2
+boto3 == 1.28.11
+psycopg2-binary == 2.9.6
 pyspark == 3.3.3
+fastparquet == 2023.7.0
+pyyaml == 6.0

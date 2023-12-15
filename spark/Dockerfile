@@ -1,3 +1,13 @@
+ARG MAVEN_IMAGE=registry.exness.io/big-data/infrastructure/service-images/maven:3.9.3-eclipse-temurin-17-focal
+ARG spark_uid=185
+
+FROM ${MAVEN_IMAGE} AS  spark_libs
+
+RUN mkdir -p /opt/spark/jars
+COPY dependencies.xml /opt/spark
+RUN mvn dependency:copy-dependencies -f /opt/spark/dependencies.xml -DoutputDirectory=/opt/spark/jars
+
+
 FROM mcr.microsoft.com/devcontainers/python:3.10
 
 ENV SPARK_VERSION=3.3.3
@@ -12,6 +22,7 @@ RUN wget -qO- https://dlcdn.apache.org/spark/spark-$SPARK_VERSION/spark-$SPARK_V
     && mv /opt/spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION $SPARK_HOME
 
 COPY spark-defaults.conf $SPARK_HOME/conf/
+COPY --from=spark_libs /opt/spark/jars/* $SPARK_HOME/jars/
 
 COPY requirements.txt /tmp/
 RUN pip install -r /tmp/requirements.txt
