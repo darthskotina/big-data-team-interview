@@ -18,9 +18,9 @@ Check out the repo to your local disk and run the following in its root director
 
 After all the services are up, start Visual Studio Code, go to Remote Explorer and locate **big-data-teaminterview-devcontainer-1** under the DEV CONTAINERS section
 , which, on mouse over, will show an arrow **attach in current window**.
-Press it, wait till vscode is done with its magic, and you are all set.
+Click it, wait till vscode is done with its magic, and you are all set.
 
-To create a new Python file just go to **Welcome Page** and click **Create New File**,
+To create a new Python file just go to a **Welcome Page** and click **Create New File**,
 you then will be able to select **Python file** in the dropdown menu.
 If the option isn't there, wait a bit until it shows, as it may take some time to get everything started.
 
