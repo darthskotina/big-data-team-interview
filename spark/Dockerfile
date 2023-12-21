@@ -18,7 +18,7 @@ ENV JDK_URL_X86_64 "https://aka.ms/download-jdk/microsoft-jdk-17.0.9-linux-x64.t
 ENV JDK_URL_ARM64 "https://aka.ms/download-jdk/microsoft-jdk-17.0.9-linux-aarch64.tar.gz"
 ENV JAVA_HOME /usr/lib/jvm/microsoft-jdk-11/jdk-17.0.9+8
 
-RUN wget -qO- https://dlcdn.apache.org/spark/spark-$SPARK_VERSION/spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION.tgz | tar xz -C /opt \
+RUN wget -qO- https://archive.apache.org/dist/spark/spark-$SPARK_VERSION/spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION.tgz | tar xz -C /opt \
     && mv /opt/spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION $SPARK_HOME
 
 COPY spark-defaults.conf $SPARK_HOME/conf/
