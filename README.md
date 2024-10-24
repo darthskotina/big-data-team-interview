@@ -9,7 +9,7 @@ I've already prepared a simple infrastructure for you to work with.
 * **docker compose** (has been tested on v2.23.0)
 * **Visual Studio Code** version 1.85.0 or later, with devcontainers extension installed (usually goes by default)
 
-Any modern operating systems will suffice- this has been tested under Mac OS, but should also work 
+Any modern operating system will suffice- this has been tested under Mac OS, but should also work 
 just fine under Linux or Windows WSL, as long as your CPU architecture is aarch64 or x86_64.
 
 Check out the repo to your local disk and run the following in its root directory:
