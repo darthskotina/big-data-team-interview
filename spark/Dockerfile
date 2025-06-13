@@ -10,6 +10,9 @@ RUN mvn dependency:copy-dependencies -f /opt/spark/dependencies.xml -DoutputDire
 
 FROM mcr.microsoft.com/devcontainers/python:3.10
 
+COPY --from=spark_libs /usr/share/maven /usr/share/maven
+ENV MAVEN_HOME=/usr/share/maven
+ENV PATH="${MAVEN_HOME}/bin:${PATH}"
 ENV SPARK_VERSION=3.3.3
 ENV HADOOP_VERSION=3
 ENV SPARK_HOME=/opt/spark
